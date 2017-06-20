@@ -1,3 +1,9 @@
+docker exec mediawikidocker_db_1 /usr/bin/mysqldump \
+-u root \
+--password=password  \
+mediawiki > /home/ec2-user/backups/backup.sql
+
+
 zip /home/ec2-user/backups/backup.zip /home/ec2-user/backups/backup.sql
 
 rm  /home/ec2-user/backups/backup.sql
