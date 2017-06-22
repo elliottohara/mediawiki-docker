@@ -1,7 +1,7 @@
 db:
   image: mysql
   environment:
-    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_ROOT_PASSWORD=${MEDIAWIKI_DB_PASS}
 web:
   build: .
   ports:
@@ -17,9 +17,9 @@ web:
   # volumes:
   #   - /local/data/dir:/data:rw
   environment:
-    - MEDIAWIKI_SITE_SERVER=//54.80.3.200
-    - MEDIAWIKI_SITE_NAME=BJJPEDIA
-    - MEDIAWIKI_DB_PASSWORD=password
+    - MEDIAWIKI_SITE_SERVER=${MEDIAWIKI_SITE_SERVER}
+    - MEDIAWIKI_SITE_NAME=${MEDIAWIKI_SITE_NAME}
+    - MEDIAWIKI_DB_PASSWORD=${MEDIAWIKI_DB_PASS}
 
     # uncomment 'MEDIAWIKI_ENABLE_SSL' to enable SSL support
     # - MEDIAWIKI_ENABLE_SSL=true

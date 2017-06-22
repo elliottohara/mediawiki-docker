@@ -1,4 +1,4 @@
-#AWS_KEY and #AWS_SECRET must be set 
+#AWS_KEY and #AWS_SECRET must be set in ~/.bashrc
 
 docker exec mediawikidocker_db_1 /usr/bin/mysqldump \
 -u root \
