@@ -15,11 +15,21 @@ export BACKUP_LOCATION=s3://media.bjjpedia.com/BACKUP
 
 #install docker
 sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+
+
+
 
 #install docker-compose
 mkdir /home/ec2-user/bin
 curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > /home/ec2-user/bin/docker-compose  
 chmod +x /home/ec2-user/bin/docker-compose
+
+
+# THIS REQUIRES A LOG OUT THEN LOG BACK IN,
+# LET'S SEPARATE THIS INTO 2 FILES
+
 
 #fire up the containers
 cd ~/mediawiki-docker
