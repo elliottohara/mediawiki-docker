@@ -17,18 +17,12 @@ export BACKUP_LOCATION=s3://media.bjjpedia.com/BACKUP
 sudo yum install -y docker
 
 #install docker-compose
-
-curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > docker-compose  
+mkdir /home/ec2-user/bin
+curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > /home/ec2-user/bin/docker-compose  
 chmod +x /home/ec2-user/bin/docker-compose
 
-#install git
-yum install git
-
-#clone the repo
-git clone https://github.com/elliottohara/mediawiki-docker.git
-
 #fire up the containers
-cd mediawiki-docker
+cd ~/mediawiki-docker
 docker-compose up
 
 export DATE=`date --date="yesterday" +"%Y/%m/%d/"`
